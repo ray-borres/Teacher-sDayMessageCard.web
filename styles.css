@@ -1,0 +1,461 @@
+ @import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Dancing+Script:wght@400;600&family=Fredoka+One&family=Caveat:wght@400;700&family=Kalam:wght@400;700&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(45deg, #1a237e, #3949ab, #5e35b1, #7b1fa2, #ad1457);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sacramento', cursive;
+            overflow: hidden;
+            position: relative;
+            cursor: none;
+        }
+        
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        /* Custom Cursor - Magic Wand */
+        
+        .magic-cursor {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            pointer-events: none;
+            z-index: 10000;
+            transition: transform 0.1s ease;
+        }
+        /* 3D Floating Classroom */
+        
+        .classroom {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            transform-style: preserve-3d;
+            animation: float3D 6s ease-in-out infinite;
+        }
+        
+        @keyframes float3D {
+            0%,
+            100% {
+                transform: rotateX(10deg) rotateY(15deg) translateY(0px);
+            }
+            50% {
+                transform: rotateX(15deg) rotateY(-10deg) translateY(-20px);
+            }
+        }
+        
+        .chalkboard {
+            width: 120px;
+            height: 80px;
+            background: #2d5016;
+            border: 4px solid #8d6e63;
+            border-radius: 8px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .chalkboard::after {
+            content: "E=mc²";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-family: 'Kalam', cursive;
+        }
+        
+        .desk {
+            width: 60px;
+            height: 40px;
+            background: #8d6e63;
+            margin-top: 20px;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .desk::before {
+            content: "📚";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 16px;
+        }
+        /* Constellation Stars */
+        
+        .star {
+            position: absolute;
+            color: #ffd700;
+            font-size: 12px;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        /* Paper Airplane */
+        
+        .paper-airplane {
+            position: absolute;
+            font-size: 24px;
+            animation: fly 15s linear infinite;
+            z-index: 100;
+        }
+        
+        @keyframes fly {
+            0% {
+                transform: translateX(-100px) translateY(50vh) rotate(0deg);
+            }
+            25% {
+                transform: translateX(25vw) translateY(20vh) rotate(15deg);
+            }
+            50% {
+                transform: translateX(50vw) translateY(60vh) rotate(-10deg);
+            }
+            75% {
+                transform: translateX(75vw) translateY(30vh) rotate(20deg);
+            }
+            100% {
+                transform: translateX(calc(100vw + 100px)) translateY(40vh) rotate(0deg);
+            }
+        }
+        /* Quote Bubbles */
+        
+        .quote-bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 20px;
+            font-family: 'Caveat', cursive;
+            font-size: 14px;
+            color: #333;
+            max-width: 200px;
+            animation: bubbleFloat 8s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .quote-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid rgba(255, 255, 255, 0.9);
+        }
+        
+        @keyframes bubbleFloat {
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10%,
+            90% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-30px) rotate(2deg);
+            }
+        }
+        /* Magic Trail */
+        
+        .magic-trail {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #ffd700, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: trailFade 1s ease-out forwards;
+        }
+        
+        @keyframes trailFade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+        /* Enhanced Card */
+        
+        .card {
+            width: 700px;
+            max-width: 90%;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            color: #ffffff;
+            border-radius: 40px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            position: relative;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(2deg);
+            box-shadow: 0 40px 120px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        /* Dynamic Text Styling */
+        
+        .text {
+            position: relative;
+        }
+        
+        .text::after {
+            content: '✨';
+            display: inline-block;
+            width: 20px;
+            height: 2.2rem;
+            animation: cursorBlink 1s step-start infinite, cursorGlow 2s ease-in-out infinite;
+            vertical-align: bottom;
+            margin-left: 8px;
+            font-size: 1.5rem;
+        }
+        
+        @keyframes cursorBlink {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes cursorGlow {
+            0%,
+            100% {
+                text-shadow: 0 0 5px #ffd700;
+            }
+            50% {
+                text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700;
+            }
+        }
+        /* Multi-font text effects */
+        
+        .font-sacramento {
+            font-family: 'Arial', sans-serif;
+            color: #ffff00;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+        
+        .font-dancing {
+            font-family: 'Arial', sans-serif;
+            color: #ff0080;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+        
+        .font-fredoka {
+            font-family: 'Arial', sans-serif;
+            color: #00bfff;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+        
+        .font-caveat {
+            font-family: 'Arial', sans-serif;
+            color: #00ff80;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+        
+        .font-kalam {
+            font-family: 'Arial', sans-serif;
+            color: #ff8000;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+        /* Fireworks */
+        
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: fireworkExplode 2s ease-out forwards;
+        }
+        
+        @keyframes fireworkExplode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(20);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(40);
+                opacity: 0;
+            }
+        }
+        /* Controls */
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .control-group {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .speed-btn,
+        .mode-btn,
+        .color-btn,
+        .bg-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .speed-btn:hover,
+        .speed-btn.active,
+        .mode-btn:hover,
+        .mode-btn.active,
+        .color-btn:hover,
+        .color-btn.active,
+        .bg-btn:hover,
+        .bg-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+        
+        .color-btn {
+            min-width: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .reset-btn {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border: none;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .reset-btn.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reset-btn:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        /* Hidden elements for easter eggs */
+        
+        .hidden-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        
+        .hidden-message.show {
+            opacity: 1;
+        }
+        /* Sparkle animation for click effects */
+        
+        @keyframes sparkle {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) rotate(360deg);
+            }
+        }
+
+        #play-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            font-family: 'Dancing Script', cursive;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 25px;
+            cursor: pointer;
+            z-index: 9999;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        #play-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+            color: #000;
+        }

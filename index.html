@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magical Teacher's Day Experience</title>
+  <link rel="stylesheet" href="styles.css" />
+ 
+</head>
+<body>
+  <!-- Magic Cursor -->
+  <div class="magic-cursor">🪄</div>
+
+  <!-- 3D Floating Classroom -->
+  <div class="classroom">
+    <div class="chalkboard" onclick="triggerEasterEgg('chalkboard')"></div>
+    <div class="desk"></div>
+  </div>
+
+  <!-- Paper Airplane -->
+  <div class="paper-airplane">✈️</div>
+
+  <!-- Quote Bubbles -->
+  <div class="quote-bubble" style="top: 15%; left: 70%;">
+    "Teaching is the art of lighting a fire, not filling a bucket!" 🔥
+  </div>
+
+  <!-- Constellation Stars -->
+  <div class="star" style="top: 20%; left: 20%;">⭐</div>
+  <div class="star" style="top: 30%; left: 80%;">✨</div>
+  <div class="star" style="top: 70%; left: 15%;">🌟</div>
+  <div class="star" style="top: 60%; left: 85%;">💫</div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <div class="control-group">
+      <button class="speed-btn" onclick="setSpeed(150, event)">Slow</button>
+      <button class="speed-btn active" onclick="setSpeed(80, event)">Normal</button>
+      <button class="speed-btn" onclick="setSpeed(30, event)">Fast</button>
+    </div>
+    <div class="control-group">
+      <button class="mode-btn active" onclick="setMode('rainbow', event)">Rainbow</button>
+      <button class="mode-btn" onclick="setMode('classic', event)">Classic</button>
+    </div>
+    <div class="control-group">
+      <button class="bg-btn active" onclick="setBgColor('gradient', event)" style="background: linear-gradient(45deg, #1a237e, #7b1fa2);">Gradient</button>
+      <button class="bg-btn" onclick="setBgColor('#ffffff', event)" style="background: #ffffff; color: #000;">White</button>
+      <button class="bg-btn" onclick="setBgColor('#ff0000', event)" style="background: #ff0000;">Red</button>
+      <button class="bg-btn" onclick="setBgColor('#ff8000', event)" style="background: #ff8000;">Orange</button>
+      <button class="bg-btn" onclick="setBgColor('#000000', event)" style="background: #000000;">Black</button>
+    </div>
+  </div>
+
+  <!-- Main Card -->
+  <div class="card" id="mainCard">
+    <div class="text" id="typed-text"></div>
+  </div>
+
+  <!-- Reset Button -->
+  <button class="reset-btn" id="reset-btn" onclick="resetAnimation()">🎭 Experience Again</button>
+
+  <!-- Hidden Easter Egg Message -->
+  <div class="hidden-message" id="hiddenMessage">
+    🎉 You found a secret! Teachers are real-life magicians! 🪄✨
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="music/A_Million_Dreams.mp4" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music Play Button -->
+  <button id="play-btn">🔊 Play Music</button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
